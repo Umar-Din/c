@@ -23,6 +23,11 @@ int areaUsingStructPointer(Rectangle *r){
 int areaUsingStruct(Rectangle r){
     return r.length * r.breadth;
 }
+
+void callByRefrance(Rectangle &r){
+    r.length = 100;
+}
+
 int main(){
 
     printf("Creating struct Rectanglee in heap\n");
@@ -32,6 +37,7 @@ int main(){
     printf("Creating struct Reactangle in stack\n");
     Rectangle sr = crateStructInStack();
     sr.length=10;sr.breadth=3;
+    callByRefrance(sr);
     printf("calculated aread => %d\n",areaUsingStruct(sr));
     return 0;
 }
